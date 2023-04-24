@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.290">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Code review principles</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="code-review-principles_files/libs/clipboard/clipboard.min.js"></script>
+<script src="code-review-principles_files/libs/quarto-html/quarto.js"></script>
+<script src="code-review-principles_files/libs/quarto-html/popper.min.js"></script>
+<script src="code-review-principles_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="code-review-principles_files/libs/quarto-html/anchor.min.js"></script>
+<link href="code-review-principles_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="code-review-principles_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="code-review-principles_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="code-review-principles_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="code-review-principles_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Code review principles</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="code-review-principles" class="level2">
+<h2 class="anchored" data-anchor-id="code-review-principles">Code review principles</h2>
+<p>URL - <a href="https://code-review.tidyverse.org/" class="uri">https://code-review.tidyverse.org/</a></p>
+<ul>
+<li><p>Incorporated all work week feedback - thanks!</p></li>
+<li><p>Goal for today</p>
+<ul>
+<li><p>Make you aware of the fact that it is “done” and is a resource you can link to while doing code review (either for a colleague or external contributor)</p></li>
+<li><p>A call to action to give the guide a skim so you can recognize when it would be useful to link to</p></li>
+<li><p>Two big new sections in response to work week feedback - discussed below</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="patterns-of-collaboration" class="level2">
+<h2 class="anchored" data-anchor-id="patterns-of-collaboration">Patterns of collaboration</h2>
+<p><a href="https://code-review.tidyverse.org/collaboration/" class="uri">https://code-review.tidyverse.org/collaboration/</a></p>
+<p>A “pattern of collaboration” details how a <em>PR author</em> and <em>PR reviewer</em> are connected (i.e.&nbsp;Do they work together closely? Does the author have any previous experience with the package? etc).</p>
+<p>Having different patterns is useful because some advice in the guide is specific to the type of collaboration that is being used. i.e.&nbsp;you would likely review an expert’s PR differently than a first-time author’s PR. I’ve gone through the guide and called out sections where the advice in the guide differs based on what pattern is being used.</p>
+<p>This section also details how software development in the tidyteam is different from other companies - we often let packages “lie dormant” for awhile while we work on other projects.</p>
+<p>There are 3 patterns, suggested by Lionel:</p>
+<ul>
+<li><p><em>Close knit collaboration</em></p>
+<ul>
+<li><p>PR author and reviewer are both heavy package contributors</p></li>
+<li><p>Reviews are typically swift - which is a consequence of the fact that both sides are typically talking to each other over Slack or through GitHub regularly</p></li>
+<li><p>Not restricted to Posit employees (ggplot2, dtplyr, dbplyr)</p></li>
+</ul></li>
+<li><p><em>The understudy</em></p>
+<ul>
+<li><p>An understudy typically follows a project “from afar” and does smaller PRs or reviews. An understudy is roughly up to date with how the package generally works, and may contribute more heavily or take over the package in the future.</p></li>
+<li><p>When an understudy is the author, review is typically swift and comes from a maintainer, <em>as long as someone is actively working on the package.</em></p></li>
+<li><p>When an understudy is the reviewer, review is typically not expected to be in depth. It is fine to merge a PR if the understudy is not available to review it.</p></li>
+<li><p>Examples: intern at Posit, motivated community member, one of us that follows a package we don’t maintain</p></li>
+</ul></li>
+<li><p><em>External contributions</em></p>
+<ul>
+<li><p>From someone who isn’t a regular contributor to the package</p></li>
+<li><p>Can be a one-off PR from a community member or a team member doing a “drive by” PR</p></li>
+<li><p>Review is <em>not</em> expected to be swift, as it is likely that the package maintainer won’t be doing active maintenance at that time</p>
+<ul>
+<li>Special consideration is made for a Posit employee that makes an external contribution <em>if that PR unblocks their work</em>. In that case, the Posit employee should contact the maintainer and work with them to come to some agreement about when that PR can be reviewed and merged.</li>
+</ul></li>
+<li><p>The PR reviewer is typically the maintainer, so when they eventually do get back around to reviewing the PR, they should feel free to <a href="https://code-review.tidyverse.org/reviewer/comments.html#sec-finishing-off-an-external-contribution">finish it off themselves</a> rather than expecting the author to come back weeks or months after submitting the PR and making tweaks.</p></li>
+</ul></li>
+</ul>
+<section id="speed-of-code-review" class="level3">
+<h3 class="anchored" data-anchor-id="speed-of-code-review">Speed of code review</h3>
+<ul>
+<li><p>No longer discuss absolute timings, it just isn’t useful.</p></li>
+<li><p><a href="https://code-review.tidyverse.org/reviewer/speed.html#what-do-we-mean-by-fast" class="uri">https://code-review.tidyverse.org/reviewer/speed.html#what-do-we-mean-by-fast</a> this section on “what do we mean by fast?” mentions that speed is <em>context dependent</em> and is somewhat determined by the pattern of collaboration being used. We give some general advice in the pattern section itself.</p></li>
+<li><p>The most important part about “speed” of code review is that the author and reviewer are aligned about what kind of pattern of collaboration they are in, which should align their expectations about roughly how fast the review should be.</p>
+<ul>
+<li>As Posit employees, if it seems like you are being blocked too often, it is up to you to <em>communicate</em> this nicely to your author.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="writing-good-issues" class="level2">
+<h2 class="anchored" data-anchor-id="writing-good-issues">Writing good issues</h2>
+<p><a href="https://code-review.tidyverse.org/issues/" class="uri">https://code-review.tidyverse.org/issues/</a></p>
+<p>Is someone leaves you a garbage issue, you can link them to this section about how to improve it. There are two main sections:</p>
+<ul>
+<li><p>Including enough context (other relevant issues, package versions, the overarching issue, etc)</p></li>
+<li><p>Including a reprex (linking out to the reprex “how to” article and video, and some discussion of making <em>minimal</em> reprexes)</p></li>
+</ul>
+<p>There is also a section on encouraging people to open <em>new</em> issues rather than commenting on extremely old ones.</p>
+<p>And there is a section on encouraging contributors to open an issue <em>first</em> rather than jumping straight to a PR, in case it is something we don’t want them to do. And for existing issues that they want to tackle, it is still best if they leave a comment on that issue asking if we’d accept a PR for it.</p>
+</section>
+<section id="action-items" class="level2">
+<h2 class="anchored" data-anchor-id="action-items">Action items</h2>
+<ul>
+<li><p>Always looking for more <a href="https://code-review.tidyverse.org/author/submitting.html#sec-good-pr-descriptions">examples of good PRs / PR descriptions</a></p></li>
+<li><p>Give the guide a quick skim so you can recognize when you might be able to link to it</p>
+<ul>
+<li><p>I linked to it here over slack about <a href="https://positpbc.slack.com/archives/C03G9NVST/p1681493078203409?thread_ts=1681491062.152139&amp;cid=C03G9NVST">committing GitHub suggestions “in a batch”</a></p></li>
+<li><p>Jenny linked to it when she got a <a href="https://github.com/r-dbi/bigrquery/pull/512#issuecomment-1511687647">“bad” PR title</a></p></li>
+</ul></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

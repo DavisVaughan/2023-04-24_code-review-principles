@@ -1,0 +1,102 @@
+---
+title: "Code review principles"
+format: html
+editor: visual
+---
+
+## Code review principles
+
+URL - <https://code-review.tidyverse.org/>
+
+-   Incorporated all work week feedback - thanks!
+
+-   Goal for today
+
+    -   Make you aware of the fact that it is "done" and is a resource you can link to while doing code review (either for a colleague or external contributor)
+
+    -   A call to action to give the guide a skim so you can recognize when it would be useful to link to
+
+    -   Two big new sections in response to work week feedback - discussed below
+
+## Patterns of collaboration
+
+<https://code-review.tidyverse.org/collaboration/>
+
+A "pattern of collaboration" details how a *PR author* and *PR reviewer* are connected (i.e. Do they work together closely? Does the author have any previous experience with the package? etc).
+
+Having different patterns is useful because some advice in the guide is specific to the type of collaboration that is being used.
+i.e. you would likely review an expert's PR differently than a first-time author's PR.
+I've gone through the guide and called out sections where the advice in the guide differs based on what pattern is being used.
+
+This section also details how software development in the tidyteam is different from other companies - we often let packages "lie dormant" for awhile while we work on other projects.
+
+There are 3 patterns, suggested by Lionel:
+
+-   *Close knit collaboration*
+
+    -   PR author and reviewer are both heavy package contributors
+
+    -   Reviews are typically swift - which is a consequence of the fact that both sides are typically talking to each other over Slack or through GitHub regularly
+
+    -   Not restricted to Posit employees (ggplot2, dtplyr, dbplyr)
+
+-   *The understudy*
+
+    -   An understudy typically follows a project "from afar" and does smaller PRs or reviews.
+        An understudy is roughly up to date with how the package generally works, and may contribute more heavily or take over the package in the future.
+
+    -   When an understudy is the author, review is typically swift and comes from a maintainer, *as long as someone is actively working on the package.*
+
+    -   When an understudy is the reviewer, review is typically not expected to be in depth.
+        It is fine to merge a PR if the understudy is not available to review it.
+
+    -   Examples: intern at Posit, motivated community member, one of us that follows a package we don't maintain
+
+-   *External contributions*
+
+    -   From someone who isn't a regular contributor to the package
+
+    -   Can be a one-off PR from a community member or a team member doing a "drive by" PR
+
+    -   Review is *not* expected to be swift, as it is likely that the package maintainer won't be doing active maintenance at that time
+
+        -   Special consideration is made for a Posit employee that makes an external contribution *if that PR unblocks their work*. In that case, the Posit employee should contact the maintainer and work with them to come to some agreement about when that PR can be reviewed and merged.
+
+    -   The PR reviewer is typically the maintainer, so when they eventually do get back around to reviewing the PR, they should feel free to [finish it off themselves](https://code-review.tidyverse.org/reviewer/comments.html#sec-finishing-off-an-external-contribution) rather than expecting the author to come back weeks or months after submitting the PR and making tweaks.
+
+### Speed of code review
+
+-   No longer discuss absolute timings, it just isn't useful.
+
+-   <https://code-review.tidyverse.org/reviewer/speed.html#what-do-we-mean-by-fast> this section on "what do we mean by fast?" mentions that speed is *context dependent* and is somewhat determined by the pattern of collaboration being used.
+    We give some general advice in the pattern section itself.
+
+-   The most important part about "speed" of code review is that the author and reviewer are aligned about what kind of pattern of collaboration they are in, which should align their expectations about roughly how fast the review should be.
+
+    -   As Posit employees, if it seems like you are being blocked too often, it is up to you to *communicate* this nicely to your author.
+
+## Writing good issues
+
+<https://code-review.tidyverse.org/issues/>
+
+Is someone leaves you a garbage issue, you can link them to this section about how to improve it.
+There are two main sections:
+
+-   Including enough context (other relevant issues, package versions, the overarching issue, etc)
+
+-   Including a reprex (linking out to the reprex "how to" article and video, and some discussion of making *minimal* reprexes)
+
+There is also a section on encouraging people to open *new* issues rather than commenting on extremely old ones.
+
+And there is a section on encouraging contributors to open an issue *first* rather than jumping straight to a PR, in case it is something we don't want them to do.
+And for existing issues that they want to tackle, it is still best if they leave a comment on that issue asking if we'd accept a PR for it.
+
+## Action items
+
+-   Always looking for more [examples of good PRs / PR descriptions](https://code-review.tidyverse.org/author/submitting.html#sec-good-pr-descriptions)
+
+-   Give the guide a quick skim so you can recognize when you might be able to link to it
+
+    -   I linked to it here over slack about [committing GitHub suggestions "in a batch"](https://positpbc.slack.com/archives/C03G9NVST/p1681493078203409?thread_ts=1681491062.152139&cid=C03G9NVST)
+
+    -   Jenny linked to it when she got a ["bad" PR title](https://github.com/r-dbi/bigrquery/pull/512#issuecomment-1511687647)
