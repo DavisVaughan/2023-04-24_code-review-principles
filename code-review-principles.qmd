@@ -6,6 +6,8 @@ editor: visual
 
 ## Code review principles
 
+Follow along at - <https://davisvaughan.github.io/2023-04-24_code-review-principles/code-review-principles.html>
+
 URL - <https://code-review.tidyverse.org/>
 
 -   Incorporated all work week feedback - thanks!
