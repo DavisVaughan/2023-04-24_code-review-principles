@@ -95,10 +95,36 @@ And for existing issues that they want to tackle, it is still best if they leave
 
 ## Action items
 
--   Always looking for more [examples of good PRs / PR descriptions](https://code-review.tidyverse.org/author/submitting.html#sec-good-pr-descriptions)
+We are always looking for more [examples of good PRs / PR descriptions](https://code-review.tidyverse.org/author/submitting.html#sec-good-pr-descriptions).
 
--   Give the guide a quick skim so you can recognize when you might be able to link to it
+We think "trying out" the guide has two forms:
+
+-   You\'re reviewing a PR and you happen to see something that conflicts the guide, so you provide a link to that section in the guide (this is what Jenny and I have already been doing)
 
     -   I linked to it here over slack about [committing GitHub suggestions "in a batch"](https://positpbc.slack.com/archives/C03G9NVST/p1681493078203409?thread_ts=1681491062.152139&cid=C03G9NVST)
 
     -   Jenny linked to it when she got a ["bad" PR title](https://github.com/r-dbi/bigrquery/pull/512#issuecomment-1511687647)
+
+-   You want to make sure that when you *author* or *review* a PR, that you are doing it according to the guide - see below
+
+### A workflow for using the guide
+
+-   If you are about to submit a PR, read:
+
+    -   [Submitting a PR](https://code-review.tidyverse.org/author/submitting.html)
+
+    -   [Writing focused PRs](https://code-review.tidyverse.org/author/focused.html)
+
+-   If you are about to review a PR, read:
+
+    -   [Aspects of a PR to look for](https://code-review.tidyverse.org/reviewer/aspects.html)
+
+    -   [Navigating a PR](https://code-review.tidyverse.org/reviewer/navigate.html)
+
+    -   [Leaving good PR comments](https://code-review.tidyverse.org/reviewer/comments.html)
+
+-   If you are handling PR comments, read:
+
+    -   [Author - Handling PR review comments](https://code-review.tidyverse.org/author/handling-comments.html)
+
+    -   [Reviewer - Handling review comment pushback](https://code-review.tidyverse.org/reviewer/pushback.html)
