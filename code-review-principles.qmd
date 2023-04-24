@@ -99,13 +99,15 @@ We are always looking for more [examples of good PRs / PR descriptions](https://
 
 We think "trying out" the guide has two forms:
 
--   You\'re reviewing a PR and you happen to see something that conflicts the guide, so you provide a link to that section in the guide (this is what Jenny and I have already been doing)
+-   You're reviewing a PR and you happen to see something that conflicts the guide, so you provide a link to that section in the guide (this is what Jenny and I have already been doing)
 
     -   I linked to it here over slack about [committing GitHub suggestions "in a batch"](https://positpbc.slack.com/archives/C03G9NVST/p1681493078203409?thread_ts=1681491062.152139&cid=C03G9NVST)
 
     -   Jenny linked to it when she got a ["bad" PR title](https://github.com/r-dbi/bigrquery/pull/512#issuecomment-1511687647)
 
--   You want to make sure that when you *author* or *review* a PR, that you are doing it according to the guide - see below
+-   You want to make sure that when you *author* or *review* a PR, that you are doing it according to the guide - see the workflow below
+
+We encourage you to actively think about both of these bullets while authoring/reviewing PRs for \~1 month, and we will re-discuss in the May 22nd meeting to see if we've found the guide to be a useful resource (possibly with a short survey before the meeting).
 
 ### A workflow for using the guide
 
